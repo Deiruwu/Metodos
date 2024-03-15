@@ -1,5 +1,4 @@
 package paquetote.Metodos;
-
 import java.util.Scanner;
 
 public class probarMetodos {
@@ -387,6 +386,7 @@ class metodos {
 
     // Multiplicar por el tipo de dato elevado a la potencia de 0 para el primero
     // dato aumentando su potencia de 1 en 1 hasta el último dato
+
     public static int hexadecimalToDecimal(String hexadecimal) {
         hexadecimal = hexadecimal.toUpperCase();
         boolean valido = true;
@@ -436,6 +436,7 @@ class metodos {
         boolean valido = true;
         for (char c : binario.toCharArray()) {
         if (c != '0' && c != '1') {
+            System.out.println("Entrada inválida. Por favor, ingrese un número binario válido.");
             valido = false;
         }
     }
@@ -447,7 +448,6 @@ class metodos {
                 }
                 return decimal;
         } else{
-            System.out.println("Entrada inválida. Por favor, ingrese un número binario válido.");
             return -1;
         }
     }
