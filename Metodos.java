@@ -82,24 +82,23 @@ class metodos {
 
     public static int hexadecimalToDecimal(String hexadecimal) {
         hexadecimal = hexadecimal.toUpperCase();
-        boolean valido = true;
-        for (char c : hexadecimal.toCharArray()) {
-            if (!Character.isDigit(c) && (c < 'A' || c > 'F')) {
-                System.out.println("Entrada inválida. Por favor, ingrese un número hexadecimal válido.");
-                valido = false;
+        try {
+            for (char c : hexadecimal.toCharArray()) {
+                if (!Character.isDigit(c) && (c < 'A' || c > 'F')) {
+                    throw new IllegalArgumentException("Entrada inválida. Por favor, ingrese un número hexadecimal válido.");
+                }
             }
-        }
-
-        if (valido){
             int decimal = 0;
             for (int x = 0, y = 1; x < hexadecimal.length(); x++, y++) {
                 char auxiliar = hexadecimal.charAt(x);
                 int digito = Character.isDigit(auxiliar) ? auxiliar - '0' : auxiliar - 'A' + 10;
-                decimal += multi(digito, (int) (Math.pow(16, hexadecimal.length() - y)));
+                decimal += digito * (int) Math.pow(16, hexadecimal.length() - y);
             }
             return decimal;
-        } else{
-            return -1;
+        
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+            return -1; // Otra forma de manejar el error
         }
     }
 
