@@ -1,7 +1,6 @@
 package paquetote.Metodos;
 
 class metodos {
-
     public static int multi(int x, int y) {
         if (x == 0 || y == 0) 
             return 0;
@@ -20,10 +19,10 @@ class metodos {
 
     public static int residuo(int x, int y) {
         if (x < y)
-        return 0;
+        return x;
 
         else 
-        return x - residuo(x-y, y);
+        return residuo(x-y, y);
     }
 
     public static String decimalToBinario(int numero) {
@@ -125,7 +124,6 @@ class metodos {
     }
 
 
-
     public static int binarioToDecimal(String binario) {
         boolean valido = true;
         for (char c : binario.toCharArray()) {
@@ -146,7 +144,6 @@ class metodos {
         }
     }
  
-
     // Modulos Conectores:
     public static String octalToHexadecimal(String octal) {
         int decimal = octalToDecimal(octal);
