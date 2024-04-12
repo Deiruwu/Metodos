@@ -1,4 +1,4 @@
-package paquetote.Metodos;
+package Metodos;
 
 class metodos {
     public static int multi(int x, int y) {

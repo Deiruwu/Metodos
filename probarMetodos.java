@@ -1,4 +1,4 @@
-package paquetote.Metodos;
+package Metodos;
 import java.util.Scanner;
 
 public class probarMetodos {
